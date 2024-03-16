@@ -10,6 +10,13 @@ fn build_full_name(person: &Person) -> String {
     full_name.push_str(" ");
 
     // TODO: Implement the part of this function that handles the person's middle name.
+    match &person.middle {
+        Some(middle) => {
+            full_name.push_str(&middle);
+            full_name.push_str(" ");
+        }
+        _ => {}
+    }
 
     full_name.push_str(&person.last);
     full_name
